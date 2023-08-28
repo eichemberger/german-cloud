@@ -1,9 +1,7 @@
 <div class="max-w-xs min-w-[20rem] hover:shadow-2xl">
   <div class="bg-white shadow-md rounded-lg max-w-sm dark:bg-gray-700 dark:border-gray-600">
       <a href="/cursos/<%# Aca va... %>">
-        <img class="rounded-t-lg p-8" src="/images/placeholder.png" alt="placeholder image" />
-
-         
+        <img class="rounded-t-lg p-8" src="/images/courses/<%= product.image || 'placeholder.png' %>" alt="<%= product.name %>" />
       </a>
       <div class="px-5 pb-5">
 

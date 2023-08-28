@@ -17,7 +17,9 @@
 
   <main class="container mx-auto">
     <div class="flex flex-wrap gap-4 items-center justify-center">
-      <%# Aca van los cursos %>
+      <% for( let i = 0; i < courses.length; i++ ) { %>
+        <%- include('../components/productCard', {product: courses[i]}) %>
+      <% } %>
     </div>
 
 

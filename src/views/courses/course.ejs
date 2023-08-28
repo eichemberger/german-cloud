@@ -1,25 +1,32 @@
 <!DOCTYPE html>
 <html lang="es">
-<%- include('../components/head', {pageName: 'Curso de express ejs'}) %>
+<%- include('../components/head', {pageName: course.name }) %>
 <%- include('../custom/body') %>
   <%- include('../components/navbar') %>
 
   <main class="container mx-auto">
     <div class="flex mt-24">
       <div class="self-center w-6/12 justify-center items-center flex h-96">
-        <img src="/images/placeholder.png" alt="<%= course.name %>">
+        <img src="/images/courses/<%= course.image || 'placeholder.png' %>" alt="<%= course.name %>">
       </div>
 
       <div class="flex flex-col gap-5 w-6/12">
-        <h2 class="text-3xl">Curso de Express EJS</h2>
+        <h2 class="text-3xl"><%= course.name %></h2>
 
-        <p class="text-green-600 text-2xl">$899</p>
+        <p class="text-green-600 text-2xl">$<%= course.price %></p>
 
-        <p class="mb-4">Un curso de express></p>
+        <p class="mb-4"><%= course.description %></p>
 
         <a href="#" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
           Agregar al carrito
         </a>
+
+        <form method="post" action="/cursos/eliminar/<%= course.id %>" >
+          <button type="submit" class="bg-red-500">
+            Borrar
+          </button>
+        </form>
+
       </div>
     </div>
   </main>
